@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react';
+import React, {PropTypes } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Header from '../components/Header';
 import LeftDrawer from '../components/LeftDrawer';
@@ -8,12 +8,19 @@ import Data from '../data';
 
 class App extends React.Component {
 
+   
+  
   constructor(props) {
     super(props);
     this.state = {
       navDrawerOpen: false
     };
   }
+//   componentDidMount(){
+//   fetch('http://api/call')      // returns a promise object
+//     .then( result => result.json()) // still returns a promise object, U need to chain it again
+//     .then( items => this.setState({items}));
+// }
 
   componentWillReceiveProps(nextProps) {
     if (this.props.width !== nextProps.width) {
@@ -26,11 +33,35 @@ class App extends React.Component {
       navDrawerOpen: !this.state.navDrawerOpen
     });
   }
-
+ 
+  
   render() {
+ 
     let { navDrawerOpen } = this.state;
     const paddingLeftDrawerOpen = 236;
-
+    // const   getData = async(e) =>{
+    //     e.preventDefault();
+    //     //GET is working
+    //     const user = e.target.elements.user.value;
+    //     //const email = e.target.elements.email.value;
+    //     //const api_call = await fetch(`http://gsc-ice-wolf.c9users.io:8082/user`);
+    //     const api_call = await fetch(`http://gsc-ice-wolf.c9users.io:8082/user?q={"filters":[{"name":"name","op":"eq","val":"${user}"}]}`);
+    //     const data = await api_call.json();
+    //     console.log(data);
+        
+    //     if(user ){//hve to do check based on returned json
+    //       this.setState({
+    //         email:data.objects[0].email,
+    //         name:data.objects[0].name
+    //       })
+    //     }else{
+    //       this.setState({
+    //         email:undefined,
+    //         name:undefined,
+    //         error:"No data returned"
+    //       })
+    //     }
+    // }
     const styles = {
       header: {
         paddingLeft: navDrawerOpen ? paddingLeftDrawerOpen : 0
